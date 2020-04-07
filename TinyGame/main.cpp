@@ -5,7 +5,29 @@ void pollEvents(Window& window, Rect& rect) {
     SDL_Event event;
 
     if (SDL_PollEvent(&event)) {
-        rect.pollEvents(event);
+		if (event.type == SDL_KEYDOWN) {
+			switch (event.key.keysym.sym)
+			{
+			case SDLK_LEFT:
+				rect.setPostion(-10, 0);
+				break;
+
+			case SDLK_RIGHT:
+				rect.setPostion(10, 0);
+				break;
+
+			case SDLK_UP:
+				rect.setPostion(0, -10);
+				break;
+
+			case SDLK_DOWN:
+				rect.setPostion(0, 10);
+				break;
+
+			default:
+				break;
+			}
+		}
         window.pollEvents(event);
     }
 }

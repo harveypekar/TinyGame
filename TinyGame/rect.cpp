@@ -42,28 +42,7 @@ void Rect::draw() const {
 	}
 }
 
-void Rect::pollEvents(SDL_Event &event) {
-	if (event.type == SDL_KEYDOWN) {
-		switch (event.key.keysym.sym)
-		{
-		case SDLK_LEFT:
-			_x -= 10;
-			break;
-
-		case SDLK_RIGHT:
-			_x += 10;
-			break;
-
-		case SDLK_UP:
-			_y -= 10;
-			break;
-
-		case SDLK_DOWN:
-			_y += 10;
-			break;
-
-		default:
-			break;
-		}
-	}
+void Rect::setPostion(int x, int y) {
+	_x += x;
+	_y += y;
 }

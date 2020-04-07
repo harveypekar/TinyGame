@@ -10,7 +10,7 @@ public:
 
 	void draw() const;
 
-	void pollEvents(SDL_Event &event);
+	void setPostion(int x, int y);
 
 private:
 	int _w, _h;
